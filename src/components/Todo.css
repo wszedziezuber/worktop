@@ -1,0 +1,53 @@
+.todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+
+
+}
+
+.todo-item {
+    font-size: 1.5rem;
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    max-width: 40%;
+
+}
+
+li {
+    flex: 1;
+}
+
+.trash-btn, .complete-btn {
+    background: #0093e9;
+    color: white;
+    border: none;    
+    padding: 1rem;
+    cursor: pointer;
+
+}
+
+.trash-btn:hover {
+    background: red;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.complete-btn:hover {
+    background: #68bc4c;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.completed {
+    opacity: 0.8;
+    text-decoration-line: line-through;
+}
