@@ -4,8 +4,9 @@ import '../node_modules/@fortawesome/fontawesome-free/css/all.css'
 import '../node_modules/antd/dist/antd.css';
 import { PageHeader, Button } from 'antd';
 
-import { Form } from './components/Form';
-import { TodoList } from './components/TodoList';
+import { Form } from './components/Form/Form';
+import { TodoList } from './components/Todo/TodoList';
+import { PomodoroClock } from './components/Pomodoro/PomodoroClock'
 
 import {
   BrowserRouter as Router,
@@ -107,6 +108,8 @@ export default function App() {
         </Route>
 
         <Route path="/pomodoro">
+          <h2 className="componentheader">Pomodoro Clock</h2>
+          <PomodoroClock />
         </Route>
 
         <Route exact path="/">

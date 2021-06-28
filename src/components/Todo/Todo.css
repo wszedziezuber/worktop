@@ -24,13 +24,21 @@ li {
     flex: 1;
 }
 
-.trash-btn, .complete-btn {
-    background: #0093e9;
+.complete-btn {
+    background: #44adeb;
     color: white;
     border: none;    
     padding: 1rem;
     cursor: pointer;
 
+}
+
+.trash-btn {
+    background: #0093e9;
+    color: white;
+    border: none;    
+    padding: 1rem;
+    cursor: pointer;
 }
 
 .trash-btn:hover {
@@ -48,6 +56,12 @@ li {
 }
 
 .completed {
-    opacity: 0.8;
+    opacity: 0.5;
     text-decoration-line: line-through;
+    
 }
+
+/* .doneButton {
+    background: #68bc4c;
+} */
+
