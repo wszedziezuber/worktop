@@ -8,9 +8,9 @@ import alarm from '../../assets/alarm.mp3'
 
 
 export const PomodoroClock = (props) => {
-    const [displayTime, setDisplayTime] = useState(3)
-    const [breakTime, setBreakTime] = useState(5)
-    const [sessionTime, setSessionTime] = useState(3)
+    const [displayTime, setDisplayTime] = useState(25 * 60)
+    const [breakTime, setBreakTime] = useState(5 * 60)
+    const [sessionTime, setSessionTime] = useState(25 * 60)
     const [timerOn, setTimerOn] = useState(false);
     const [onBreak, setOnBreak] = useState(false);
 
