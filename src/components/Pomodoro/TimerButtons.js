@@ -4,6 +4,7 @@ import { Button } from 'antd';
 
 export const TimerButtons = ({timerOn, controlTime, resetTime }) => {
 
+
     return(
         <div>
         <div className="buttons-container">
@@ -22,6 +23,7 @@ export const TimerButtons = ({timerOn, controlTime, resetTime }) => {
         reset
 
         </Button>
+        
         </div>
         </div>
     )
