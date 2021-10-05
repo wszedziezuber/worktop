@@ -9,6 +9,7 @@ import { Form } from "./components/Form/Form";
 import { TodoList } from "./components/Todo/TodoList";
 import { PomodoroClock } from "./components/Pomodoro/PomodoroClock";
 import { NotesList } from "./components/Notes/NotesList";
+import { SearchBar } from "./components/Notes/Search";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -18,36 +19,21 @@ export default function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  //App State - Notes
   const [notes, setNotes] = useState([]);
-
-  const addNote = (text) => {
-    const date = new Date();
-    const newNote = {
-      id: nanoid(),
-      text: text,
-      date: date.toLocaleDateString(),
-    };
-    const newNotes = [...notes, newNote];
-    setNotes(newNotes);
-  };
-
-
-  const deleteNote = (id) => {
-    const newNotes = notes.filter((note) => note.id !== id);
-    setNotes(newNotes);
-  }
+  const [searchText, setSearchText] = useState("");
 
   //get Local todos once app starts
 
   useEffect(() => {
-    getLocalTodos();
+    getLocalTodosAndNotes();
   }, []);
 
   //useEffect
   useEffect(() => {
     filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
+    saveTodosAndNotes();
+  }, [todos, notes, status]);
 
   //Functions
   const filterHandler = () => {
@@ -64,19 +50,44 @@ export default function App() {
     }
   };
 
-  //Save to local storage
-  const saveLocalTodos = () => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+  const addNote = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleDateString(),
+    };
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
   };
 
-  const getLocalTodos = () => {
-    if (localStorage.getItem("todos") === null) {
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  };
+
+  //Save to local storage
+  const saveTodosAndNotes = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("notes", JSON.stringify(notes));
+  };
+
+  const getLocalTodosAndNotes = () => {
+    if (
+      localStorage.getItem("todos") === null &&
+      localStorage.getItem("notes") === null
+    ) {
       localStorage.setItem("todos", JSON.stringify([]));
+      localStorage.setItem("notes", JSON.stringify([]));
     } else {
       let todoLocal = JSON.parse(localStorage.getItem("todos"));
+      let notesLocal = JSON.parse(localStorage.getItem("notes"));
       setTodos(todoLocal);
+      setNotes(notesLocal);
     }
   };
+
+  //APP
 
   return (
     <div className="App">
@@ -84,7 +95,6 @@ export default function App() {
         <PageHeader
           className="pageHeader"
           ghost={false}
-          onBack={() => window.history.back()}
           title="WorkTop"
           subTitle=""
           extra={[
@@ -121,7 +131,6 @@ export default function App() {
               setInputText={setInputText}
               inputText={inputText}
               setStatus={setStatus}
-              
             />
             <TodoList
               setTodos={setTodos}
@@ -137,10 +146,13 @@ export default function App() {
 
           <Route exact path="/notes">
             <h2 className="componentheader">Notes</h2>
-            <NotesList 
-            notes={notes} 
-            handleAddNote={addNote} 
-            handleDeleteNote={deleteNote}
+            <SearchBar handleSearchNote={setSearchText} />
+            <NotesList
+              notes={notes.filter((note) =>
+                note.text.toLowerCase().includes(searchText)
+              )}
+              handleAddNote={addNote}
+              handleDeleteNote={deleteNote}
             />
           </Route>
         </Switch>

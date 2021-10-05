@@ -4,6 +4,7 @@ import { AddNote } from './AddNote'
 
 export const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
     return (
+        <div>
         <div className="notes-list-container"> 
         <div className="notes-list">
         <AddNote handleAddNote={handleAddNote}/>
@@ -21,5 +22,6 @@ export const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
 
         </div>
         </div>
+    </div>
     )
 }

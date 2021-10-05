@@ -28,13 +28,13 @@ hr {
 }
 
 .note.new {
-  background-color: #f7b8ff;
+  background-color: #ffb8b8;
 }
 
 textarea {
   resize: none !important;
   border: none;
-  background-color: #f7b8ff;
+  background-color: #ffb8b8;
 }
 
 .save {
@@ -76,3 +76,32 @@ textarea:focus {
   cursor: pointer;
 }
 
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search {
+  background-color: inherit;
+  border: none;
+  color: white;
+  min-width: 600px;
+}
+
+.search-icon {
+  color: white;
+  margin-right: 10px;
+  
+}
+
+.search:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+ 
