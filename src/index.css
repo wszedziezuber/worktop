@@ -17,8 +17,12 @@ hr {
 }
 
 .notes-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-left: 5rem;
   margin-right: 5rem;
+
 }
 
 .notes-list {
@@ -57,7 +61,7 @@ textarea:focus {
   background-color: #fef68a;
   border-radius: 5px;
   padding: 1rem;
-  min-height: 170px;
+  min-height: 250px;
   width: 250px;
   display: flex;
   flex-direction: column;
@@ -78,6 +82,7 @@ textarea:focus {
 
 .search-bar {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;

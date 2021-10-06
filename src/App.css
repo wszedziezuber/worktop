@@ -5,39 +5,49 @@
 }
 
 .App {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
   background-image: linear-gradient(120deg, #0093E9, #80D0C7);
   /* color: white; */
   min-height: 100vh;
+  min-width: fit-content;
 }
 
 
 .navLink {
-  margin: 0 1rem 0 1rem;
+display: inline-block;
 }
+
 
 .componentheader {
   font-size: 3rem;
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding: 3rem;
 }
 
 .pageHeader {
   background-color: transparent !important;
   color: white !important;
+  display: flex;
+  justify-content: flex-start;
+
+  
 }
 
 .ant-page-header-heading-title {
-  color: white !important;
+  color: rgb(255, 250, 250) !important;
   font-size: 2rem !important;
+  display: flex;
 }
 
-.ant-page-header-back-button {
+.ant-page-header-heading-sub-title {
   color: white !important;
+  font-size: 1.2rem !important;
+  margin: 9px 0 0 15px ;
+  
 }
+
+
 
 .ant-btn-text {
   color: white !important;

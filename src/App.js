@@ -10,6 +10,7 @@ import { TodoList } from "./components/Todo/TodoList";
 import { PomodoroClock } from "./components/Pomodoro/PomodoroClock";
 import { NotesList } from "./components/Notes/NotesList";
 import { SearchBar } from "./components/Notes/Search";
+import { formatTime } from "./components/Pomodoro/PomodoroClock"
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -22,6 +23,13 @@ export default function App() {
   //App State - Notes
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState("");
+  //App State - Pomodoro
+  const [displayTime, setDisplayTime] = useState(25 * 60);
+	const [breakTime, setBreakTime] = useState(5 * 60);
+	const [sessionTime, setSessionTime] = useState(25 * 60);
+	const [timerOn, setTimerOn] = useState(false);
+	const [onBreak, setOnBreak] = useState(false);
+
 
   //get Local todos once app starts
 
@@ -87,7 +95,8 @@ export default function App() {
     }
   };
 
-  //APP
+
+//APP
 
   return (
     <div className="App">
@@ -119,8 +128,18 @@ export default function App() {
                 </Button>
               </Link>
             </a>,
+            <a className="navLink timer">
+            <Link to="/pomodoro">
+              <Button type="text" key="4">
+              {formatTime(displayTime)}
+              </Button>
+            </Link>
+          </a>,
           ]}
         ></PageHeader>
+
+
+
 
         <Switch>
           <Route path="/todo">
@@ -141,7 +160,19 @@ export default function App() {
 
           <Route path="/pomodoro">
             <h2 className="componentheader">Pomodoro Clock</h2>
-            <PomodoroClock />
+            <PomodoroClock
+            displayTime={displayTime}
+            setDisplayTime={setDisplayTime}
+            breakTime={breakTime}
+            setBreakTime={setBreakTime}
+            timerOn={timerOn}
+            setTimerOn={setTimerOn}
+            onBreak={onBreak}
+            setOnBreak={setOnBreak}
+            sessionTime={sessionTime}
+            setSessionTime={setSessionTime}
+            
+            />
           </Route>
 
           <Route exact path="/notes">
