@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './PomodoroClock.css';
 import { BreakLength } from './BreakLength';
 import { SessionLength } from './SessionLength';
@@ -119,7 +119,6 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 		<div>
 			<p>{onBreak ? 'Break' : 'Focus'}</p>
 			<p className="displayTime">{formatTime(displayTime)}</p>
-
 			<div className="length-container">
 				<div>
 					<p>Break</p>
@@ -148,5 +147,6 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 				resetTime={resetTime}
 			/>
 		</div>
+
 	);
 };

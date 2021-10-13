@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Form.css'
 
 export const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
@@ -25,9 +25,11 @@ export const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
         value={inputText}
         onChange={inputTextHandler}
         type="text" 
-        className="todo-input" />
+        className="todo-input" 
+        placeholder="Add your task..."
+        />
         <button onClick={submitTodoHandler} className="todo-button" type="submit">
-            <i className="fas fa-plus-square"></i>
+            <i className="fas fa-plus"></i>
         </button>
         <div className="select">
             <select onChange={statusHandler} name="todos" className="filter-todo">

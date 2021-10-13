@@ -9,18 +9,20 @@ export const TimerButtons = ({timerOn, controlTime, resetTime }) => {
         <div>
         <div className="buttons-container">
         <Button 
+            style={{ background: "none", color: "#fff", border: "none" }}
             onClick={controlTime}
             className="timer-button">
 
-            {timerOn ? "pause" : "play"}
+            {timerOn ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}
 
         </Button>
 
-        <Button 
+        <Button
+        style={{ background: "none", color: "#fff", border: "none" }}
         onClick={resetTime}
         className="timer-button">
 
-        reset
+        <i className="fas fa-redo-alt"></i>
 
         </Button>
         

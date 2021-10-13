@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export const Note = ({id, text, date, handleDeleteNote}) => {
     return (
