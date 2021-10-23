@@ -10,8 +10,7 @@ import { TodoList } from './components/Todo/TodoList';
 import { PomodoroClock } from './components/Pomodoro/PomodoroClock';
 import { NotesList } from './components/Notes/NotesList';
 import { SearchBar } from './components/Notes/Search';
-import { formatTime } from './components/Pomodoro/PomodoroClock';
-
+import { Example } from './App_temp'
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -105,7 +104,7 @@ export default function App() {
 	return (
 		<div className="App">
 			<Router>
-				<PageHeader
+				{/* <PageHeader
 					className="pageHeader"
 					ghost={false}
 					title="WorkTop"
@@ -132,13 +131,16 @@ export default function App() {
 								</Button>
 							</Link>
 						</a>,
-						<a className="navLink timer">
-								<Button type="text" key="">
+						<p className="navLink timer">
 									{formatTime(displayTime)}
-								</Button>
-						</a>,
+						</p>,
 					]}
-				></PageHeader>
+				></PageHeader> */}
+
+				<Example
+				displayTime={displayTime}
+				/>
+
 
 				<Switch>
 					<Route exact path="/">

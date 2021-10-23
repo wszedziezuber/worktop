@@ -26,7 +26,7 @@ li {
 }
 
 .complete-btn {
-    background: #44adeb;
+    background: #696c6e;
     color: white;
     border: none;    
     padding: 1rem;
@@ -35,7 +35,7 @@ li {
 }
 
 .trash-btn {
-    background: #0093e9;
+    background: #696c6e;
     color: white;
     border: none;    
     padding: 1rem;

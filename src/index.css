@@ -32,13 +32,13 @@ hr {
 }
 
 .note.new {
-  background-color: #ffb8b8;
+  background-color: #d29797;
 }
 
 textarea {
   resize: none !important;
   border: none;
-  background-color: #ffb8b8;
+  background-color: #d29797;
 }
 
 .save {
@@ -58,7 +58,7 @@ textarea:focus {
 }
 
 .note {
-  background-color: #fef68a;
+  background-color: #eae385;
   border-radius: 5px;
   padding: 1rem;
   min-height: 250px;
@@ -109,4 +109,3 @@ textarea:focus {
   color: rgb(255, 255, 255);
 }
 
- 
