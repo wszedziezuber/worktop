@@ -14,7 +14,7 @@ import {
 
 import { Link } from 'react-router-dom';
 
-export const Example = ({ displayTime }) => {
+export const NavBar = ({ displayTime }) => {
 	const [collapsed, setCollapsed] = useState(true);
 
 	const toggleNavbar = () => setCollapsed(!collapsed);

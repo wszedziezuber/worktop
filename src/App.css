@@ -33,33 +33,6 @@ display: inline-flex;
   
 }
 
-.ant-page-header-heading-title {
-  color: rgb(255, 250, 250) !important;
-  font-size: 2rem !important;
-  display: flex;
-}
-
-
-.ant-page-header-heading-sub-title {
-  color: white !important;
-  font-size: 1.2rem !important;
-  margin: 9px 0 0 15px ;
-  
-}
-
-.ant-page-header {
-  display: flex !important;
-  justify-content: space-between;
-}
-
-
-
-.ant-btn-text {
-  color: white !important;
-  font-size: 1.5rem !important;
-}
-
-
 /*temp */
 
 p {

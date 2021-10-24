@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import '../node_modules/antd/dist/antd.css';
-import { PageHeader, Button } from 'antd';
 import { nanoid } from 'nanoid';
 
 import { Form } from './components/Form/Form';
@@ -10,7 +9,7 @@ import { TodoList } from './components/Todo/TodoList';
 import { PomodoroClock } from './components/Pomodoro/PomodoroClock';
 import { NotesList } from './components/Notes/NotesList';
 import { SearchBar } from './components/Notes/Search';
-import { Example } from './App_temp'
+import { NavBar } from './NavBar';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -104,43 +103,7 @@ export default function App() {
 	return (
 		<div className="App">
 			<Router>
-				{/* <PageHeader
-					className="pageHeader"
-					ghost={false}
-					title="WorkTop"
-					subTitle=""
-					extra={[
-						<a className="navLink">
-							<Link to="/notes">
-								<Button type="text" key="1">
-									Notes
-								</Button>
-							</Link>
-						</a>,
-						<a className="navLink">
-							<Link to="/todo">
-								<Button type="text" key="2">
-									To Do
-								</Button>
-							</Link>
-						</a>,
-						<a className="navLink">
-							<Link to="/pomodoro">
-								<Button type="text" key="3">
-									Pomodoro
-								</Button>
-							</Link>
-						</a>,
-						<p className="navLink timer">
-									{formatTime(displayTime)}
-						</p>,
-					]}
-				></PageHeader> */}
-
-				<Example
-				displayTime={displayTime}
-				/>
-
+				<NavBar displayTime={displayTime} />
 
 				<Switch>
 					<Route exact path="/">
