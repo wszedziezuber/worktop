@@ -1,0 +1,20 @@
+.navbar-toggler {
+	margin-left: 10px;
+	background-color: #fff;
+}
+
+.navbar-nav {
+	margin-left: 10px;
+}
+
+.navbar-brand {
+	color: #fff;
+	font-size: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-item {
+	color: #fff;
+}

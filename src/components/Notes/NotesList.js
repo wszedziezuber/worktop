@@ -1,6 +1,7 @@
 import React from 'react';
 import { Note } from './Note'
 import { AddNote } from './AddNote'
+import './Notes.css'
 
 export const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
     return (

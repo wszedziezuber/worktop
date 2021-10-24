@@ -1,0 +1,86 @@
+.notes-list-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 5rem;
+	margin-right: 5rem;
+}
+
+.notes-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.note.new {
+	background-color: #d29797;
+}
+
+textarea {
+	resize: none !important;
+	border: none;
+	background-color: #d29797;
+}
+
+.save {
+	background-color: #e1e1e1;
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+}
+
+.save:hover {
+	background-color: #ededed;
+	cursor: pointer;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+.note {
+	background-color: #eae385;
+	border-radius: 5px;
+	padding: 1rem;
+	min-height: 250px;
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 20px;
+	white-space: pre-wrap !important;
+}
+
+.note-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.delete-icon {
+	cursor: pointer;
+}
+
+.search-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.search {
+	background-color: inherit;
+	border: none;
+	color: white;
+	min-width: 600px;
+}
+
+.search-icon {
+	color: white;
+	margin-right: 10px;
+}
+
+.search:focus {
+	outline: none;
+}
