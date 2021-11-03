@@ -5,8 +5,6 @@ import { SessionLength } from './SessionLength';
 import { TimerButtons } from './TimerButtons';
 import alarm from '../../assets/alarm.mp3';
 
-
-
 export const formatTime = (time) => {
 	let minutes = Math.floor(time / 60);
 	let seconds = time % 60;
@@ -17,10 +15,18 @@ export const formatTime = (time) => {
 	);
 };
 
-
-export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreakTime, timerOn, setTimerOn, onBreak, setOnBreak, sessionTime, setSessionTime}) => {
-
-
+export const PomodoroClock = ({
+	displayTime,
+	setDisplayTime,
+	breakTime,
+	setBreakTime,
+	timerOn,
+	setTimerOn,
+	onBreak,
+	setOnBreak,
+	sessionTime,
+	setSessionTime,
+}) => {
 	const breakAudio = new Audio(alarm);
 
 	useEffect(() => {
@@ -33,16 +39,6 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 			console.log(onBreak);
 		}
 	});
-
-	//local storage:
-
-	useEffect(() => {
-		getPomodoroTime();
-	}, []);
-
-	useEffect(() => {
-		savePomodoroTime();
-	}, [displayTime]);
 
 	const savePomodoroTime = () => {
 		localStorage.setItem('displayTime', JSON.stringify(displayTime));
@@ -57,10 +53,8 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 		breakAudio.play();
 	};
 
-	
-
 	const changeTime = (amount, type) => {
-		if (type == 'break') {
+		if (type === 'break') {
 			if ((breakTime <= 60 && amount < 0) || breakTime >= 60 * 60) {
 				return;
 			}
@@ -115,6 +109,16 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 		setOnBreak(false);
 	};
 
+	//local storage:
+
+	useEffect(() => {
+		getPomodoroTime();
+	}, []);
+
+	useEffect(() => {
+		savePomodoroTime();
+	}, [displayTime]);
+
 	return (
 		<div>
 			<p>{onBreak ? 'Break' : 'Focus'}</p>
@@ -147,6 +151,5 @@ export const PomodoroClock = ({ displayTime, setDisplayTime, breakTime, setBreak
 				resetTime={resetTime}
 			/>
 		</div>
-
 	);
 };

@@ -35,19 +35,6 @@ export default function App() {
 	const [timerOn, setTimerOn] = useState(false);
 	const [onBreak, setOnBreak] = useState(false);
 
-	//get Local todos once app starts
-
-	useEffect(() => {
-		getLocalTodosAndNotes();
-	}, []);
-
-	//useEffect
-	useEffect(() => {
-		filterHandler();
-		saveTodosAndNotes();
-	}, [todos, notes, status]);
-
-	//Functions
 	const filterHandler = () => {
 		switch (status) {
 			case 'completed':
@@ -99,11 +86,24 @@ export default function App() {
 		}
 	};
 
+	//get Local todos once app starts
+
+	useEffect(() => {
+		getLocalTodosAndNotes();
+	}, []);
+
+	//useEffect
+	useEffect(() => {
+		filterHandler();
+		saveTodosAndNotes();
+	}, [todos, notes, status]);
+
+	//Functions
+
 	//APP
 
 	return (
 		<div className="App">
-			
 			<Router>
 				<NavBar displayTime={displayTime} />
 
