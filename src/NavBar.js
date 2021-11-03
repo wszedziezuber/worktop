@@ -22,10 +22,14 @@ export const NavBar = ({ displayTime }) => {
 	return (
 		<div>
 			<Navbar color="" dark className="navbar">
+				<div className="container">
+
 				<NavbarToggler onClick={toggleNavbar} className="mr-2" />
-
 				<NavbarBrand className="mr-auto">WorkTop</NavbarBrand>
+				<NavbarBrand className="mr-auto">{formatTime(displayTime)}</NavbarBrand>
 
+
+				
 				<Collapse isOpen={!collapsed} navbar>
 					<Nav navbar>
 						<NavItem>
@@ -41,12 +45,14 @@ export const NavBar = ({ displayTime }) => {
 						</NavItem>
 						<NavItem>
 							<Link to="/Pomodoro">
-								<NavLink>Pomodoro {formatTime(displayTime)}</NavLink>
+								<NavLink>Pomodoro Clock</NavLink>
 							</Link>
 						</NavItem>
 					</Nav>
 				</Collapse>
+			</div>
 			</Navbar>
+
 		</div>
 	);
 };

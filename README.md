@@ -1,3 +1,18 @@
+# WorkTop - productivity app
+    
+    Main features:
+    -Notes List - adding/deleting notes, character limit, searching (filtering) notes list
+    -To Do List - adding/deleting tasks, marking if task is completed or not, filtering
+    -Pomodoro Clock - setting session/break interval, resetting clocks, alarm sound
+
+# Technologies Used:
+    
+    -HTML
+    -CSS
+    -React
+    -ReactStrap
+    
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

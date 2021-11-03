@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+
 import './App.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import '../node_modules/antd/dist/antd.css';
+
 import { nanoid } from 'nanoid';
 
 import { Form } from './components/Form/Form';
@@ -101,6 +103,7 @@ export default function App() {
 
 	return (
 		<div className="App">
+			
 			<Router>
 				<NavBar displayTime={displayTime} />
 
