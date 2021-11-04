@@ -86,16 +86,18 @@ export default function App() {
 		}
 	};
 
+
+
 	useEffect(() => {
 		getLocalTodosAndNotes();
-	}, []);
+	}, [])
 	//get Local todos once app starts
 
 	//useEffect
 	useEffect(() => {
 		filterHandler();
 		saveTodosAndNotes();
-	}, [todos, notes, status]); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [todos, notes, status]) // eslint-disable-line react-hooks/exhaustive-deps
 
 	//Functions
 
@@ -143,7 +145,7 @@ export default function App() {
 						/>
 					</Route>
 
-					<Route exact path="/notes">
+					<Route path="/notes">
 						<h2 className="componentheader">Notes</h2>
 						<SearchBar handleSearchNote={setSearchText} />
 						<NotesList
@@ -154,6 +156,12 @@ export default function App() {
 							handleDeleteNote={deleteNote}
 						/>
 					</Route>
+					<Route path="*">
+						<div className="container text-center">
+						<h1 className="error-404">404 page not found</h1>
+						</div>
+					</Route>
+
 				</Switch>
 			</Router>
 		</div>

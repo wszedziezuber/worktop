@@ -25,8 +25,8 @@ export const NavBar = ({ displayTime }) => {
 				<div className="container">
 
 				<NavbarToggler onClick={toggleNavbar} className="mr-2" />
-				<NavbarBrand className="mr-auto">WorkTop</NavbarBrand>
-				<NavbarBrand className="mr-auto">{formatTime(displayTime)}</NavbarBrand>
+				<NavbarBrand href="/" className="mr-auto">WorkTop</NavbarBrand>
+				<NavbarBrand href="pomodoro" className="mr-auto">{formatTime(displayTime)}</NavbarBrand>
 
 
 				
@@ -44,7 +44,7 @@ export const NavBar = ({ displayTime }) => {
 							</Link>
 						</NavItem>
 						<NavItem>
-							<Link to="/Pomodoro">
+							<Link to="/pomodoro">
 								<NavLink>Pomodoro Clock</NavLink>
 							</Link>
 						</NavItem>

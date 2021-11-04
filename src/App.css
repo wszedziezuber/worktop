@@ -43,3 +43,11 @@ p {
   align-items: center;
 }
 
+.error-404 {
+  color: #fff !important;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 300px;
+}
+
