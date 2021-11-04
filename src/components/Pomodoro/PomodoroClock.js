@@ -113,11 +113,11 @@ export const PomodoroClock = ({
 
 	useEffect(() => {
 		getPomodoroTime();
-	}, []);
+	}, []) // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		savePomodoroTime();
-	}, [displayTime]);
+	}, [displayTime]) // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div>
