@@ -92,7 +92,7 @@ export default function App() {
 		getLocalTodosAndNotes();
 		filterHandler();
 		saveTodosAndNotes();
-	}, [todos, notes, status]);
+	}, [todos, notes, status]) // eslint-disable-line react-hooks/exhaustive-deps
 
 	//Functions
 
