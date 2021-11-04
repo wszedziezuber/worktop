@@ -86,13 +86,16 @@ export default function App() {
 		}
 	};
 
-	//get Local todos once app starts
-	//useEffect
 	useEffect(() => {
 		getLocalTodosAndNotes();
+	}, []);
+	//get Local todos once app starts
+
+	//useEffect
+	useEffect(() => {
 		filterHandler();
 		saveTodosAndNotes();
-	}, [todos, notes, status]) // eslint-disable-line react-hooks/exhaustive-deps
+	}, [todos, notes, status]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	//Functions
 
