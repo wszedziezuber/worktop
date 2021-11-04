@@ -87,13 +87,9 @@ export default function App() {
 	};
 
 	//get Local todos once app starts
-
-	useEffect(() => {
-		getLocalTodosAndNotes();
-	}, []);
-
 	//useEffect
 	useEffect(() => {
+		getLocalTodosAndNotes();
 		filterHandler();
 		saveTodosAndNotes();
 	}, [todos, notes, status]);
