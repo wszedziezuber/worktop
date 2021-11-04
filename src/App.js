@@ -113,7 +113,7 @@ export default function App() {
 						<Redirect to="/notes" />
 					</Route>
 
-					<Route path="/todo">
+					<Route exact path="/todo">
 						<h2 className="componentheader">To Do List</h2>
 						<Form
 							todos={todos}
@@ -129,7 +129,7 @@ export default function App() {
 						/>
 					</Route>
 
-					<Route path="/pomodoro">
+					<Route exact path="/pomodoro">
 						<h2 className="componentheader">Pomodoro Clock</h2>
 						<PomodoroClock
 							displayTime={displayTime}
@@ -145,7 +145,7 @@ export default function App() {
 						/>
 					</Route>
 
-					<Route path="/notes">
+					<Route exact path="/notes">
 						<h2 className="componentheader">Notes</h2>
 						<SearchBar handleSearchNote={setSearchText} />
 						<NotesList

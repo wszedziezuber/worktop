@@ -26,7 +26,7 @@ export const NavBar = ({ displayTime }) => {
 
 				<NavbarToggler onClick={toggleNavbar} className="mr-2" />
 				<NavbarBrand href="/" className="mr-auto">WorkTop</NavbarBrand>
-				<NavbarBrand href="pomodoro" className="mr-auto">{formatTime(displayTime)}</NavbarBrand>
+				<NavbarBrand className="mr-auto">{formatTime(displayTime)}</NavbarBrand>
 
 
 				
